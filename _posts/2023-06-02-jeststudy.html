@@ -29,11 +29,11 @@ background: ''
 </pre>
 <p> * 테스트 실행: npm run test </p>
 
-<p> 특정 테스트만 실행 : npm run test <파일명 or 경로> </p>
+<p> 특정 테스트만 실행 : npm run test &lt;파일명 or 경로&gt; </p>
 
 <h2>2. jest에 사용되는 함수</h2>
 
-<b> test()함수</b>
+<strong>test() 함수</strong>
 <p> 가장 일반적으로 쓰이는 test()이다.</p>
 <pre>
         <code>
@@ -43,16 +43,16 @@ test("테스트 설명", () => {
        </code>
 </pre>
 
-<b> describe()함수</b>
+<strong>describe() 함수</strong>
 <p>describe안에는 test함수가 들어가야한다 </p>
-<p>describe는 test함수들을 묶는 그룹이라생각하면 된다.</p>
+<p>describe는 test함수들을 묶는 그룹이라 생각하면 된다.</p>
 
-<b> toXXX (Test Matcher) 종류</b>
+<strong>toXXX (Test Matcher) 종류</strong>
 
 <p>- toBe() : 같다
 - toEqual() : 같다
 
-toBe는 객체인것들은 안된다. 그럴떄 쓰는게 Equal
+toBe는 객체인 것들은 안된다. 그럴 때 쓰는 게 Equal
 Jest는 toBe() 대신에 toEqual() 함수를 사용하라고 가이드해주고 있습니다
 
 - toBeGreaterThanOrEqual() : 이상
