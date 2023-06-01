@@ -6,7 +6,7 @@ date: 2023-06-02
 background: ''
 ---
 <p> </p>
-<h2 class="section-heading">1. jest 설치</h2>
+<h2 class="section-heading">1. jest 설치 및 설정 </h2>
 
 <p> jest 설치: npm install jest --save-dev </p>
 
@@ -27,26 +27,42 @@ background: ''
 }
        </code>
 </pre>
-<p> * 테스트 실행: npm test </p>
+<p> * 테스트 실행: npm run test </p>
 
-<h2 class="section-heading">2. 테마가져오기</h2>
+<p> 특정 테스트만 실행 : npm run test <파일명 or 경로> </p>
 
-<p>https://jekyllthemes.io/theme/jekyll-now 이사이트 주소에들어가 맘에드는 테마선택 </p>
-<p>테마의 github 링크들어가 fork하면 나의 저장소(repository)에 저장된다</p>
+<h2>2. jest에 사용되는 함수</h2>
 
-<p>저장된 respository의 이름을 {계정아이디}.github.io 로 바꾼다.</p>
-<p>예 : YoggyuCho.github.oi</p>
-<p>이렇게 바꾸면 블로그 주소는 https://계정아이디.github.io 이다.</p>
+<b> test()함수</b>
+<p> 가장 일반적으로 쓰이는 test()이다.</p>
+<pre>
+        <code>
+test("테스트 설명", () => {
+  expect("검증 대상").toXxx("기대 결과");
+});
+       </code>
+</pre>
 
-<h2 class="section-heading">3. 기본정보 수정하기</h2>
-<p>데모사이트와 같은 코드를 그대로 가져왔지만, 나의 블로그 URL에서는 404 에러가 발생한다.</p>
-<p>원인 : 테마의 코드 속 URL이 나의 블로그 주소(ID.github.io)와 일치하지 않아서 발생 한 것이다.</p>
-<p>해결 : URL과 관련된 해당 라인을 수정하면 간단하게 해결할 수 있다</p>
+<b> describe()함수</b>
+<p>describe안에는 test함수가 들어가야한다 </p>
+<p>describe는 test함수들을 묶는 그룹이라생각하면 된다.</p>
 
-<img width="688" alt="config" src="https://github.com/YonggyuCho/YonggyuCho.github.io/assets/127103253/b8830133-f519-45ee-a279-be5c5d9b538f">
-<p>_config.yml 파일을 수정</p>
+<b> toXXX (Test Matcher) 종류</b>
 
-<img width="1275" alt="블로그Home" src="https://github.com/YonggyuCho/YonggyuCho.github.io/assets/127103253/a3edc4bd-18ba-4f00-9253-31660a4c8449">
-<p>수정후 바뀐 내 블로그를 들어가면 이렇게 바뀌어있다.</p>
+<p>- toBe() : 같다
+- toEqual() : 같다
 
-<p>지금까지 간단하게 github블로그 만들기를 진행하였다. </p>
+toBe는 객체인것들은 안된다. 그럴떄 쓰는게 Equal
+Jest는 toBe() 대신에 toEqual() 함수를 사용하라고 가이드해주고 있습니다
+
+- toBeGreaterThanOrEqual() : 이상
+- toBeLessThanOrEqual() : 이하
+- toBeNull() : Null이 되는 경우를 검사한다.
+- toBeTruthy() : True인지 검사
+- toBeTruthy(), toBeFalsy()
+- toHaveLength(), toContain()
+- toMatch()
+- toThrow()</p>
+
+
+
