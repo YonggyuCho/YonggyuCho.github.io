@@ -1,40 +1,65 @@
 ---
 layout: post
-title: "Man must explore, and this is exploration at its greatest"
-subtitle: "Problems look mighty small from 150 miles up"
-date: 2020-01-31 10:45:13 -0400
-background: '/img/posts/06.jpg'
+title: "Jest 공부"
+subtitle: "함수 Test 해보기"
+date: 2023-06-02
+background: ''
 ---
+<p> </p>
+<h2 class="section-heading">1. jest 설치 및 설정 </h2>
 
-<p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+<p> jest 설치: npm install jest --save-dev </p>
 
-<p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+<p> 설치후 package.json 파일 안의 다음 부분을 수정합니다 </p>
 
-<p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+<style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+</style>
+<pre>
+        <code>
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+       </code>
+</pre>
+<p> * 테스트 실행: npm run test </p>
 
-<p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+<p> 특정 테스트만 실행 : npm run test <파일명 or 경로> </p>
 
-<p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+<h2>2. jest에 사용되는 함수</h2>
 
-<h2 class="section-heading">The Final Frontier</h2>
+<b> test()함수</b>
+<p> 가장 일반적으로 쓰이는 test()이다.</p>
+<pre>
+        <code>
+test("테스트 설명", () => {
+  expect("검증 대상").toXxx("기대 결과");
+});
+       </code>
+</pre>
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+<b> describe()함수</b>
+<p>describe안에는 test함수가 들어가야한다 </p>
+<p>describe는 test함수들을 묶는 그룹이라생각하면 된다.</p>
 
-<p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+<b> toXXX (Test Matcher) 종류</b>
 
-<blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+<p>- toBe() : 같다
+- toEqual() : 같다
 
-<p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+toBe는 객체인것들은 안된다. 그럴떄 쓰는게 Equal
+Jest는 toBe() 대신에 toEqual() 함수를 사용하라고 가이드해주고 있습니다
 
-<h2 class="section-heading">Reaching for the Stars</h2>
-
-<p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-<img class="img-fluid" src="https://source.unsplash.com/Mn9Fa_wQH-M/800x450" alt="Demo Image">
-<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-<p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-<p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-<p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://unsplash.com/">Unsplash</a>.</p>
+- toBeGreaterThanOrEqual() : 이상
+- toBeLessThanOrEqual() : 이하
+- toBeNull() : Null이 되는 경우를 검사한다.
+- toBeTruthy() : True인지 검사
+- toBeTruthy(), toBeFalsy()
+- toHaveLength(), toContain()
+- toMatch()
+- toThrow()</p>
