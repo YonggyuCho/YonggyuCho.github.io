@@ -1,14 +1,14 @@
 title:              Yonggyu IT 메모 블로그
 email:              whdydrb741@naver.com
 description:        내맘대로 메모
-author:             Start Bootstrap
-baseurl:            "/"
-url:                "https://yonggyucho.github.io"
+author:             YonggyuCho
+baseurl:            "https://yonggyucho.github.io"
+url:                "/"
 
 # Social Profiles
-twitter_username:   SBootstrap
-github_username:    StartBootstrap
-facebook_username:  StartBootstrap
+twitter_username:   
+github_username:    YonggyuCho
+facebook_username:  
 instagram_username:  
 linkedin_username:
 
