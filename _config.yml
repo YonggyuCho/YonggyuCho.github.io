@@ -1,8 +1,8 @@
-title:              YongGyu's Blog
+title:              Yonggyu IT 메모 블로그
 email:              whdydrb741@naver.com
-description:        A Blog Theme by Start Bootstrap
+description:        내맘대로 메모
 author:             Start Bootstrap
-baseurl:            "/startbootstrap-clean-blog-jekyll"
+baseurl:            "https://yonggyucho.github.io/"
 url:                "https://yonggyucho.github.io/"
 
 # Social Profiles
