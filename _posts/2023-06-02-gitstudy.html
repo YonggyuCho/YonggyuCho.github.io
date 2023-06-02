@@ -6,3 +6,74 @@ date: 2023-06-02
 background: ''
 ---
 
+
+<h1>Git 정리</h1>
+
+<p>git init (파일이름) : 저장소 생성하기</p>
+<p>- 디렉토리 내부에 .git 디렉토리가 생긴다</p>
+
+<p>git status : commit 상태확인</p>
+
+<p>git add (파일이름) : 파일의 상태를 commit으로 </p>
+<p>-add를 하는이유는 파일을 select해서 commit 하기위해</p>
+
+<p>git commit : commit 상태인 파일들을 전부 저장소로 보낸다</p>
+<p>git commit -m : editor(vim) 이 안뜨도록 저장소로 보낸다</p>
+
+<p>git log : commit한 history(hash ID)가 나온다.</p>
+<p>git log -p : 변경한 내용, 좀더 상세하게 보여준다. </p>
+<p>git log --all : 모든branch의 로그를 보여준다</p>
+<p>git log --all --graph --decorate : 모든branch와 연결된 정보들을 보여준다.</p>
+
+<p>git diff (hash ID)..(hash ID) : 소스사이에 변화를 보여준다.</p>
+<p>git diff : ID를 지정하지않아도 staged한 파일의 변화를 보여준다</p>
+
+<p>git restore (파일이름) : 기존 변화 정보 제거햣 </p>
+<p>git reset (hash ID) : commit한 특정 시점으로 돌아가기</p>
+<p>- reset은 안하는게 좋다(협업시 충돌이 일어난다)</p>
+
+
+<h1>Branch </h1>
+
+<p>Branch는 여러개의 작업을 가능케한다.</p>
+<p>HEAD : 현재의 branch </p>
+<p>git branch : 현재 branch목록을보여준다</p>
+<p>git branch (이름) : branch 생성</p>
+<p>git checkout (branch 이름) : HEAD를 변경한다.</p>
+<p>git merge (branch 이름) : branch에서 변경된내용을 HEAD로 적용</p>
+<p>git revert : 일부 기존 commit 되돌리기</p>
+<p>commit 되지않은것은 branch로 옮겨도 같이 따라온다</p>
+
+<p>그래서 사용하는것이 stash</p>
+<p>git stash : 숨긴파일느낌 add한 파일을 stash list로 옮긴다</p>
+<p>git stash drop (파일) : stash파일 없애기</p>
+<p>git stash apply (파일) : stash파일 뺴오기</p>
+<p>tag 소스의 특정시점을 tag로 지정</p>
+
+
+<h1>github</h1>
+
+<p>public private 차이</p>
+<p>public은 내코드를 공유는 가능하지만 수정은 불가 </p>
+
+<p>private는 공유도 X</p>
+<p>git remote add (origin) (주소)</p>
+<p>(origin)은 이름이다 원격저장소를 짧게 요약 </p>
+
+<b>github에 올리는순서</b>
+<p>git init </p>
+<p>git add (파일)</p>
+<p>git commit -m "메세지"</p>
+<p>git branch -m (main)</p>
+<p>git remote add (origin) (원격주소)</p>
+<p>git push -u origin main</p>
+<p>*협력중일땐 pull로 내PC에존재하는 프로그램을 update해야한다.</p>
+
+
+
+<p>
+</p>
+
+
+
+
