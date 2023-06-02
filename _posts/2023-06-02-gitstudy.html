@@ -5,6 +5,12 @@ subtitle: "Git 정리."
 date: 2023-06-02
 background: ''
 ---
+<style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+</style>
 
 
 <h1>Git 정리</h1>
@@ -36,10 +42,47 @@ background: ''
 <h1>Branch </h1>
 
 <p>Branch는 여러개의 작업을 가능케한다.</p>
-<p>HEAD : 현재의 branch </p>
+<p>Branch는 가지라는 뜻</p>
+<p>Master Branch에서의 작업이 기초(줄기)</p>
+<p>혼자서는 충분히가능하지만 협업하는경우 또 다른 Branch가 필요하다.</p>
+<p>새로운 가지(branch) 가필요하다 </p>
+<p>새로운 branch에서의 작업과 Master의 작업을 합치는것을 Merge라고한다.</p>
+<p>또한 새로운branch에서의 작업은 Master에서 볼 수 없다. 즉  독립적인 공간이라고 할 수 있다.</p>
+<p>하지만Merge 명령어를 사용하는경우 새로운 branch의 내용을 적용시킨다.</p>
+
+<b>Merge의 충돌과 해결방법</b>
+
+<p>새로운 Branch에서 내용을 추가하면 Master에서 보이지않는다</p>
+<p>하지만 Master에서도 내용을 추가하면 같은 파일에서 서로 수정한 내용이 branch마다 다르다</p>
+<p>그럼 Merge과정에서 충돌이 생긴다. </p>
+  
+<p>git status로 확인가능</p>
+ <pre>
+        <code>
+*both modified : [파일] 이라고 표시된다
+       </code>
+</pre>
+
+<p>충돌된 파일안에 들어가보면</p>
+  <pre>
+        <code>
+   //예시
+>>>>>HEAD>>>
+ print(hello Master)
+=======
+ print(hello New Branch)
+>>>New Branch>>
+       </code>
+</pre>
+<p>이렇게 되어있을 파일을 필요한내용을 지우거나 둘다 반영시킨후 commit하면 된다.</p>
+
+
+
+<p>HEAD : 가장 최신의 커밋을 가리킨다 </p>
 <p>git branch : 현재 branch목록을보여준다</p>
 <p>git branch (이름) : branch 생성</p>
 <p>git checkout (branch 이름) : HEAD를 변경한다.</p>
+git branch -d (branch이름) : branch 삭제
 <p>git merge (branch 이름) : branch에서 변경된내용을 HEAD로 적용 (가져오기)</p>
 <p>git revert : 일부 기존 commit 되돌리기</p>
 <p>commit 되지않은것은 branch로 옮겨도 같이 따라온다</p>
