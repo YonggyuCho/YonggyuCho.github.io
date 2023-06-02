@@ -60,21 +60,19 @@ background: ''
 <p>*both modified : [파일] 이라고 표시된다</p>
 
 <p>충돌된 파일안에 들어가보면</p>
-  <pre>
-        <code>
-   //예시
+<code>
+//예시
 >>>>>HEAD>>>
- print(hello Master)
+ print(hello Master)  //Master
 =======
- print(hello New Branch)
+ print(hello New Branch) //Newbranch
 >>>New Branch>>
-       </code>
-</pre>
+</code>
 <p>이렇게 되어있을 파일을 필요한내용을 지우거나 둘다 반영시킨후 commit하면 된다.</p>
 
 
 
-<p>HEAD : 가장 최신의 커밋을 가리킨다 </p>
+<p>HEAD : 가장 최신의 커밋을 가리킨다 (현재의 Branch) </p>
 <p>git branch : 현재 branch목록을보여준다</p>
 <p>git branch (이름) : branch 생성</p>
 <p>git checkout (branch 이름) : HEAD를 변경한다.</p>
