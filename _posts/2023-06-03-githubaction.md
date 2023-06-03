@@ -42,9 +42,10 @@ GitHub Actions은 5가지 개념이 중요합니다: Events, Workflows, Jobs, Ac
 
 **Events**
 
-```yaml
+```
 on:
   push:
+  ```
 GitHub에서 발생하는 특정한 이벤트(사건)들을 지정합니다.
 예) main 브랜치로 merge하는 과정, 커밋을 푸시하는 과정, 이슈를 누군가 여는 과정 등.
 
