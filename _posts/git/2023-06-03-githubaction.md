@@ -14,7 +14,7 @@ tags:
 
 ---
 
-#CI/CD란
+# CI/CD란
 
 **CI (Continuous Integration, 지속 통합)**
 
