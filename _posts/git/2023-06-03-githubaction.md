@@ -1,12 +1,20 @@
 ---
 layout: post
-title: "gitAction 공부."
-subtitle: "CI/CD."
-date: 2023-06-03 15:45:13 -0400
+title: "CI/CD란"
+subtitle: "CI/CD란."
+date: 2023-06-03
 background: ''
+categories:
+  - Git
+tags:
+  - Git
+  - Github
+  - CI/CD
+  - GithubAction
+
 ---
 
-## CI/CD란
+
 
 **CI (Continuous Integration, 지속 통합)**
 
@@ -42,7 +50,7 @@ GitHub Actions은 5가지 개념이 중요합니다: **Events, Workflows, Jobs, 
 
 **Events**
 
-```
+```yml
 on:
   push:
   ```
