@@ -44,7 +44,7 @@ Build, Test, 릴리즈, 배포 단계들이 전부 자동화된 것입니다.
 
 여러 도구가 존재하지만 그 중 하나인 GitHub Actions를 알아보겠습니다.
 
-## GitHub Actions
+# GitHub Actions
 
 GitHub Actions은 5가지 개념이 중요합니다: **Events, Workflows, Jobs, Actions, Runners.**
 
@@ -81,4 +81,8 @@ GitHub에서 제공하는 여러 개의 유용한 Actions입니다.
 **Runners**
 
 Job들을 실행하는 것을 Runners라고 합니다.
+
+
+
+
 
