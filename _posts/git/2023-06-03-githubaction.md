@@ -11,7 +11,7 @@ tags:
   - Github
   - CI/CD
   - GithubAction
-
+  - DevOps
 ---
 
 # CI/CD란
