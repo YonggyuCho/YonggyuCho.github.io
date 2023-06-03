@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "CI/CD란"
-subtitle: "CI/CD란."
+title: "CI/CD"
+subtitle: "CI/CD 공부."
 date: 2023-06-03
 background: ''
 categories:
@@ -14,7 +14,7 @@ tags:
 
 ---
 
-
+#CI/CD란
 
 **CI (Continuous Integration, 지속 통합)**
 
