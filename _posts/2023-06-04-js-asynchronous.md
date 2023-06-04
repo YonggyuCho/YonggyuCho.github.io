@@ -74,10 +74,8 @@ $.get('url', function(response){
  
  이처럼 연속적으로 콜백함수를 호출하였을시 코드의 가독성은 떨어지고 로직을 변경하기도 까다로워진다.
 
-### 해결방법
- 
- 일반적으로 콜백지옥을 해결하기위한 방법은 Promise와 Async가 존재한다
- 
+## 해결방법
+
  만약 코딩 패턴으로만 콜백 지옥을 해결하려면 밑의 방식으로 콜백 함수를 분리해주면된다.
  ```Javascript
 function callback1(response, function(id){
@@ -93,7 +91,12 @@ function callback3(response, function(data){
  	callbackData(respones, callback1);
 })
 ```
+ 일반적으로 콜백지옥을 해결하기위한 방법은 
+ **Promise**
+ 와 
+**Async**
+ 가 존재한다
  
-
+ 
  
 
