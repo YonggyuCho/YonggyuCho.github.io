@@ -18,17 +18,6 @@ tags:
 
 ## 비동기 처리의 예시
 
-```html
-<pre style="background-color: #f2f2f2;">
-<code>
-console.log('hello')
-
-setTimeout(function() {
-  console.log('Good')
-}, 3000)
-</code>
-</pre>
-
 ```Javascipt
 console.log('hello')
 
