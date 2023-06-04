@@ -58,9 +58,42 @@ $.get은 URL서버에서 데이터를 받아오는것인데 그 값을 response�
 
 ## 콜백지옥
 
+콜백지옥은 비동기 처리를 위해 콜백 함수를 연속해서 사용할떄 발생하는 문제이다.
+```Javascript
+$.get('url', function(response){
+	callback1(response, function(id){
+		callback2(id, function(rs){
+			callback3(rs, function(data){
+				console.log(data)
+			})
+		})
+	})
 
+})
+ ```
  
+ 이처럼 연속적으로 콜백함수를 호출하였을시 코드의 가독성은 떨어지고 로직을 변경하기도 까다로워진다.
+
+### 해결방법
  
+ 일반적으로 콜백지옥을 해결하기위한 방법은 Promise와 Async가 존재한다
  
+ 만약 코딩 패턴으로만 콜백 지옥을 해결하려면 밑의 방식으로 콜백 함수를 분리해주면된다.
+ ```Javascript
+function callback1(response, function(id){
+	callback1Data(id, callback2)
+})
+function callback2(response, function(rs){
+	callback2Data(rs, callback3)
+})
+function callback3(response, function(data){
+	console.log(data)
+})
+ $.get('url', function(response){
+ 	callbackData(respones, callback1);
+})
+```
+ 
+
  
 
