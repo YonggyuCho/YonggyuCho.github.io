@@ -102,6 +102,13 @@ function callback3(response, function(data){
  자바스크립트 비동기처리에 사용되는 객체이다. 
  Promise는 주로 서버에서 받아온 데이터를 화면에 표시할 때 사용한다. 일반적으로 웹 어플리케이션을 구현할 때 서버에서 데이터를 요청하고 받아오기 위해 사용된다. 
  
+ ### Promise 상태
+
+Promise를 사용할 떄 알아야 할 점은 바로 상태(status) 입니다. 여기서 말하는 상태란 프로미스의 처리 과정을 의미합니다.
+`New Promise`
+()로 프로미스를 생성하고 종료될 때까지 3가지 상태를 갖는다.
+- Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은상태
+ 
 ```Javascipt
 function getData(callbackFunc) {
 	$.get('https://domain.com/products/1', function(response) {
