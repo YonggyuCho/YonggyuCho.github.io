@@ -38,9 +38,10 @@ console.log('Bye')
  함수이다. 
   
  콜백함수를 사용하면 특정 로직이 끝났을 때 원하는 동작을 실행시킬 수 있습니다.
- 콜백함수는 특정한 이름이 존재하는 함수가 아니라 
+ 콜백함수는 특정한 이름이 존재하는 함수가 아니라 함수에 인자를 함수로넣고 사용하여 특정 로직이 끝나고나서 함수를 다시 호출하는것이다.
  
- 
+ 예시코드를 보자
+ ```Javascipt
  function getData(callbackFunc) {
 	$.get('https://domain.com/products/1', function(response) {
 		callbackFunc(response); // 서버에서 받은 데이터 response를 callbackFunc() 함수에 넘겨줌
@@ -50,9 +51,14 @@ console.log('Bye')
 getData(function(tableData) {
 	console.log(tableData); // $.get()의 response 값이 tableData에 전달됨
 });
- 
- 
- 
+ ```
+getData의함수의 인자에 콜백함수가 들어간다. 
+$.get은 URL서버에서 데이터를 받아오는것인데 그 값을 response에 저장한다. 
+콜백함수를 사용하지않으면 response에 값을 넣기도전에 끝나버린다. 하지만 콜백함수를 사용하여 $.get이 끝나고나서 callbackFunc함수를 다시호출하여 response에 그 데이터를 넣어준다.
+
+## 콜백지옥
+
+
  
  
  
