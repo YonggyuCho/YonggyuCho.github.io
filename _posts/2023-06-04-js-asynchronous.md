@@ -113,8 +113,52 @@ Promise를 사용할 떄 알아야 할 점은 바로 상태(status) 입니다. �
  
 #### Peding(대기)
 먼저 `New Promise()` 메서드를 호출하면 대기상태가 된다.
- 
-```Javascipt
+`New Promise()`를 호출할때 콜백함수를 선언할수도 있고, 콜백함수의 인자는 `resolve`, `reject` 이다.
+```javascript
+new Promise(function(resolve, reject){
+})
+```
+
+#### Fulfilled(이행)
+여기서 콜백 함수의 인자 `resolve`를 실행하면 이행 상태가 된다.
+```javascript
+new Promise(function(resolve, reject){
+	resolve()
+})
+```
+그리고 이행 상태가 되면 아래와 같이 `then()`을 이용하여 처리 결과 값을 받을 수 있습니다.
+```javascript
+new Promise(function(resolve, reject){
+	var data = 100
+	resolve(data)
+})
+getData().then(function(resolvedData){   //resolve의 결과 값을 then을통해 resolveData로 받았다.
+	console.log(resolvedData)   //100
+})
+```
+
+#### Rejected(실패)
+반대로 여기서 콜백 함수의 인자 `reject`를 실행하면 실패 상태가 된다.
+```javascript
+new Promise(function(resolve, reject){
+	reject()
+})
+```
+
+그리고 실패 상태가 되면 아래와 같이 `catch()`을 이용하여 실패처리 결과 값을 받을 수 있습니다.
+```javascript
+new Promise(function(resolve, reject){
+	reject(new Error("Is Error"))
+})
+getData().then().catch(function(err){   //Is Error를 err에 받았다
+	console.log(err)   // Error : Is Error
+})
+
+```
+### 예시코드
+
+밑코드는 Promise를 사용하지않는 callback함수로의 비동기 처리이다.
+```javascript
 function getData(callbackFunc) {
 	$.get('https://domain.com/products/1', function(response) {
 		callbackFunc(response) // 서버에서 받은 데이터 response를 callbackFunc() 함수에 넘겨줌
@@ -126,10 +170,9 @@ getData(function(tableData) {
 })
 ```
  
- 위코드는 Promise를 사용하지않는 callback함수로의 비동기 처리이다.
  위코드에 Promise를 적용하면 아래와 같은 코드가 된다.
  
- ```Javascipt
+```javascript
  function getData(callback){
  	return new Promise(function(resolve, reject) {  // Promise를 사용할때에는 return을 사용해줘야한다.
 		$.get('url 주소', function(response){
@@ -137,11 +180,11 @@ getData(function(tableData) {
 		})
 	})
 }
-getData().than(function(tableData){ //resolve의 결과값이 여기로 전달된다.
+getData().then(function(tableData){ //resolve의 결과값이 여기로 전달된다.
 	console.log(tableData) //response의 값이 tableData로 전달된다.
  })
   ```
 
- 
+ 이제는 `Promise()`,`resolve()`,`then()` 과 같은 함수의 역할이 보인다.
  
  
