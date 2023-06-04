@@ -97,6 +97,38 @@ function callback3(response, function(data){
 **Async**
  가 존재한다
  
+ ## Promise란
  
- 
+ 자바스크립트 비동기처리에 사용되는 객체이다. 
+ Promise는 주로 서버에서 받아온 데이터를 화면에 표시할 때 사용한다. 일반적으로 웹 어플리케이션을 구현할 때 서버에서 데이터를 요청하고 받아오기 위해 사용된다. 
+ ```Javascipt
+ function getData(callbackFunc) {
+	$.get('https://domain.com/products/1', function(response) {
+		callbackFunc(response); // 서버에서 받은 데이터 response를 callbackFunc() 함수에 넘겨줌
+	});
+}
 
+getData(function(tableData) {
+	console.log(tableData); // $.get()의 response 값이 tableData에 전달됨
+});
+ ```
+ 
+ 위코드는 Promise를 사용하지않는 callback함수로의 비동기 처리이다.
+ 위코드에 Promise를 적용하면 아래와 같은 코드가 된다.
+ 
+ ```Javascipt
+ function getData(callback){
+ 	return new Promise(function(resolve, reject) {  // Promise를 사용할때에는 return을 사용해줘야한다.
+		$.get('url 주소', function(response){
+		resolve(response)   //데이터를 받으면 resolve 호출
+		})
+	})
+}
+getData().than(function(tableData){ //resolve의 결과값이 여기로 전달된다.
+	console.log(tableData) //response의 값이 tableData로 전달된다.
+ })
+  ```
+
+ 
+ 
+ 
