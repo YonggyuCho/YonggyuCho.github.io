@@ -105,9 +105,14 @@ function callback3(response, function(data){
  ### Promise 상태
 
 Promise를 사용할 떄 알아야 할 점은 바로 상태(status) 입니다. 여기서 말하는 상태란 프로미스의 처리 과정을 의미합니다.
-`New Promise`
-()로 프로미스를 생성하고 종료될 때까지 3가지 상태를 갖는다.
+`New Promise()`
+로 프로미스를 생성하고 종료될 때까지 3가지 상태를 갖는다.
 - Pending(대기) : 비동기 처리 로직이 아직 완료되지 않은상태
+- Fulfilled(이행) : 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태
+- Rejected(실패) : 비동기 처리가 실패하거나 오류가 발생한 상태
+ 
+#### Peding(대기)
+먼저 `New Promise()` 메서드를 호출하면 대기상태가 된다.
  
 ```Javascipt
 function getData(callbackFunc) {
